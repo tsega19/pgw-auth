@@ -1,0 +1,19 @@
+# Use Amazon Corretto 17 on AL2 for building (explicit tag)
+FROM amazoncorretto:17-al2 AS pgw_builder
+
+WORKDIR /app
+
+COPY ./gradle/ ./gradle
+COPY ./build.gradle ./gradlew ./settings.gradle .
+RUN ./gradlew :wrapper --no-daemon
+
+COPY . .
+RUN ./gradlew bootJar --no-daemon
+
+# Runtime stage - use JRE instead of JDK for smaller size
+FROM amazoncorretto:17-al2-jre
+
+EXPOSE 6060
+WORKDIR /app
+COPY --from=pgw_builder /app/build/libs/*.jar app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]

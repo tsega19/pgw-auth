@@ -1,0 +1,25 @@
+root = true
+
+[*]
+indent_style = space
+indent_size = 3
+ij_continuation_indent_size = 6
+tab_width = 4
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.java]
+max_line_length = 120
+
+[*.xml]
+indent_size = 2
+
+[*.yaml]
+indent_size = 2
+
+
+[*.gradle]
+indent_style = tab
+indent_size = 4
+ij_continuation_indent_size = 8
