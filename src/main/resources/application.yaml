@@ -8,13 +8,14 @@ spring:
     show-sql: true
 
   datasource:
-    url: jdbc:mysql://127.0.0.1:3301/dacloud_pgw_be
+    url: jdbc:mysql://localhost:3301/dacloud_pgw_be
     username: root
-    password: root
+    password: root123
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 server:
-  port: 6060
+  port: 6061
+
 
 springdoc:
   api-docs:

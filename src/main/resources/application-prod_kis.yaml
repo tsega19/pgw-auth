@@ -1,0 +1,22 @@
+spring:
+  config:
+    activate:
+      on-profile: prod_kis
+  application:
+    name: dacloud PGW(kispay_prod)
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  datasource:
+    url: jdbc:mysql://pgw_db:3301/pgw_prod_db
+    username: root
+    password: root1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+pgw-param:
+  pgw-ip: 196.189.61.66
+  pgw_port: 6061
+  checkout-url: http://196.189.61.66:6061/checkout

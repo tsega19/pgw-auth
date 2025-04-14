@@ -1,0 +1,31 @@
+spring:
+  config:
+    activate:
+      on-profile: local_mav
+  application:
+    name: InvPgw(mav_local)
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  datasource:
+    url: jdbc:mysql://localhost:3301/dacloud_pgw_be
+    username: root
+    password: root123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+pgw-param:
+  pgw-ip: 127.0.0.1
+  pgw_port: 6061
+  checkout-url: http://127.0.0.1:6061/checkout
+  banks:
+    - name: Sample Bank
+      location: http://localhost:6051
+      id: smpl
+
+logging:
+  level:
+    #    root: debug
+    root: info
